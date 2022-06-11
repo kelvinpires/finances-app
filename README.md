@@ -10,15 +10,15 @@
 
 ## Screenshots
 
-<div style="display: flex; gap: 20px">
-    <img width="200" src="./screenshots/smartphone-screen.png" />
-    <img width="200" src="./screenshots/smartphone-screen-wallet.png" />
+<div style="display: flex; gap: 20px; justify-content: center">
+    <img width="300" src="./screenshots/smartphone-screen.png" />
+    <img width="300" src="./screenshots/smartphone-screen-wallet.png" />
 </div>
 <br>
 <br>
 <hr>
 <br>
-<div style="display: flex; gap: 20px">
-    <img width="300" src="./screenshots/pc-screen.png" />
-    <img width="300" src="./screenshots/pc-screen-wallet.png" />
+<div style="display: flex; gap: 20px; justify-content: center">
+    <img width="400" src="./screenshots/pc-screen.png" />
+    <img width="400" src="./screenshots/pc-screen-wallet.png" />
 </div>
