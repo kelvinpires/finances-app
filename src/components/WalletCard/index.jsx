@@ -62,7 +62,7 @@ export const WalletCard = () => {
 
   useEffect(() => {
     handleCalc();
-  });
+  }, [transactions]);
 
   return (
     <WalletCardContainer>
