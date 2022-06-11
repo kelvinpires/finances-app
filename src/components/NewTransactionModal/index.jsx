@@ -124,7 +124,6 @@ export const NewTransactionModal = ({ isModalOpen, setIsModalOpen }) => {
             id="transaction_data"
             name="transaction_data"
             required
-            value={transactionData}
             onChange={(e) => setTransactionData(e.target.value)}
           />
           <Input
