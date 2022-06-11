@@ -56,13 +56,12 @@ export const WalletCard = () => {
       0
     );
     setBalance(total.toFixed(2));
-    setExpense(payTotal.toFixed(2).replace(".", ",").replace("-", ""));
-    setReceive(receiveTotal.toFixed(2).replace(".", ","));
+    setExpense(payTotal.toFixed(2));
+    setReceive(receiveTotal.toFixed(2));
   };
 
   useEffect(() => {
     handleCalc();
-    console.log();
   });
 
   return (
@@ -70,7 +69,7 @@ export const WalletCard = () => {
       <WalletCardContent>
         <ReceiveDiv>
           <ItemLabel>Seus Ganhos</ItemLabel>
-          <Receive>{receive != 0 ? "+ R$" + receive : "R$ " + receive}</Receive>
+          <Receive>{receive > 0 ? "+ R$" + receive : "R$ " + receive}</Receive>
         </ReceiveDiv>
         <TotalDiv>
           <ItemLabel>Saldo disponível</ItemLabel>
@@ -83,7 +82,9 @@ export const WalletCard = () => {
         <ExpenseDiv>
           <ItemLabel>Seus Gastos</ItemLabel>
           <Expense>
-            {expense < 0 ? "- R$ " + { expense } : "R$ " + expense}
+            {expense < 0
+              ? "- R$ " + expense.replace(".", ",").replace("-", "")
+              : "R$ " + expense.replace(".", ",")}
           </Expense>
         </ExpenseDiv>
       </WalletCardContent>
