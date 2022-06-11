@@ -69,13 +69,17 @@ export const WalletCard = () => {
       <WalletCardContent>
         <ReceiveDiv>
           <ItemLabel>Seus Ganhos</ItemLabel>
-          <Receive>{receive > 0 ? "+ R$" + receive : "R$ " + receive}</Receive>
+          <Receive>
+            {receive > 0
+              ? "+ R$" + receive.replace(".", ",")
+              : "R$ " + receive.replace(".", ",")}
+          </Receive>
         </ReceiveDiv>
         <TotalDiv>
           <ItemLabel>Saldo disponível</ItemLabel>
           <TotalMoney>
             {balance < 0
-              ? "- R$ " + balance.replace("-", "")
+              ? "- R$ " + balance.replace("-", "").replace(".", ",")
               : "R$ " + balance.replace(".", ",")}
           </TotalMoney>
         </TotalDiv>
