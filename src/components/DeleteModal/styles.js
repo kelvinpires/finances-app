@@ -38,6 +38,9 @@ export const DeleteText = styled.h1`
   font-size: 4rem;
   color: var(--text);
   font-weight: 600;
+  @media screen and (max-width: 400px) {
+    font-size: 3.4rem;
+  }
 `;
 
 export const DeleteMessageBox = styled.div`
