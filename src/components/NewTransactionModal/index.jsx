@@ -123,6 +123,7 @@ export const NewTransactionModal = ({ isModalOpen, setIsModalOpen }) => {
             type="date"
             id="transaction_data"
             name="transaction_data"
+            placeholder={() => new Date().toLocaleDateString()}
             required
             onChange={(e) => setTransactionData(e.target.value)}
           />
