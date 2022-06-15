@@ -59,9 +59,14 @@ export const Transaction = () => {
                 <TransactionValueContainer>
                   <TransactionValue isPayed={pay < 0 ? true : false}>
                     {pay < 0
-                      ? "- R$ " +
-                        pay.toFixed(2).replace("-", "").replace(".", ",")
-                      : "+ R$ " + receive.toFixed(2).replace(".", ",")}
+                      ? pay.toLocaleString("pt-BR", {
+                          style: "currency",
+                          currency: "BRL",
+                        })
+                      : receive.toLocaleString("pt-BR", {
+                          style: "currency",
+                          currency: "BRL",
+                        })}
                   </TransactionValue>
                 </TransactionValueContainer>
                 <TransactionEditContent

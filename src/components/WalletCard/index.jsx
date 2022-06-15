@@ -55,9 +55,24 @@ export const WalletCard = () => {
       (previous, current) => previous + current,
       0
     );
-    setBalance(total.toFixed(2));
-    setExpense(payTotal.toFixed(2));
-    setReceive(receiveTotal.toFixed(2));
+    setBalance(
+      total.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      })
+    );
+    setExpense(
+      payTotal.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      })
+    );
+    setReceive(
+      receiveTotal.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      })
+    );
   };
 
   useEffect(() => {
@@ -69,27 +84,15 @@ export const WalletCard = () => {
       <WalletCardContent>
         <ReceiveDiv>
           <ItemLabel>Seus Ganhos</ItemLabel>
-          <Receive>
-            {receive > 0
-              ? "+ R$" + receive.replace(".", ",")
-              : "R$ " + receive.replace(".", ",")}
-          </Receive>
+          <Receive>{receive}</Receive>
         </ReceiveDiv>
         <TotalDiv>
           <ItemLabel>Saldo disponível</ItemLabel>
-          <TotalMoney>
-            {balance < 0
-              ? "- R$ " + balance.replace("-", "").replace(".", ",")
-              : "R$ " + balance.replace(".", ",")}
-          </TotalMoney>
+          <TotalMoney>{balance}</TotalMoney>
         </TotalDiv>
         <ExpenseDiv>
           <ItemLabel>Seus Gastos</ItemLabel>
-          <Expense>
-            {expense < 0
-              ? "- R$ " + expense.replace(".", ",").replace("-", "")
-              : "R$ " + expense.replace(".", ",")}
-          </Expense>
+          <Expense>{expense}</Expense>
         </ExpenseDiv>
       </WalletCardContent>
     </WalletCardContainer>
